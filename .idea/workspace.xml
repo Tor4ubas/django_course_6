@@ -5,40 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6">
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/blogs/children.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/blogs/health.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/blogs/love.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/blogs/sport.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/album.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/holder.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/cron.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/migrations/0003_rename_massage_mailing_message_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +76,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703352911525</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Курсовая 6">
+      <option name="closed" value="true" />
+      <created>1703353144352</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703353144352</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Курсовая 6">
+      <option name="closed" value="true" />
+      <created>1703353160619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703353160619</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Курсовая 6">
+      <option name="closed" value="true" />
+      <created>1703353236781</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703353236781</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

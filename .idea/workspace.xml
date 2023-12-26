@@ -5,24 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6">
-      <change afterPath="$PROJECT_DIR$/mailing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/cron.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/migrations/0002_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/migrations/0003_rename_massage_mailing_message_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mailing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/cron.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/cron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/add_group.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/csu.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +27,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2Zx8dQuttDoIULaGeBDekxtjq6H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,7 +41,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/akex/autosell"
   }
 }]]></component>
   <component name="SharedIndexes">

@@ -5,7 +5,7 @@
         <a href="/" class="btn btn-outline-primary">Главная</a>
         <a href="{% url 'client:client_list' %}" class="btn btn-outline-primary">Клиенты</a>
         <a href="{% url 'mailing:list' %}" class="btn btn-outline-primary">Рассылки</a>
-        <a href="{% url 'blogs:blogs' %}" class="text-white">Блоги</a>
+        <a href="{% url 'blogs:main' %}" class="text-white">Блоги</a>
         {% if user.is_authenticated %}
             <a href="{% url 'users:profile' %}" class="text-white">Профиль</a>
             <a href="{% url 'users:logout' %}" class="text-white">Выход</a>

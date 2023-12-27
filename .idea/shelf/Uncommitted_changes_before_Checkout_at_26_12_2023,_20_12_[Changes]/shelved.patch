@@ -1,0 +1,74 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"75eb1f1b-2d79-47cc-b108-1e23f18d545b\" name=\"Changes\" comment=\"Курсовая 6\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/config/settings.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/config/settings.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/mailing/cron.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/mailing/cron.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/mailing/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/mailing/views.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/users/forms.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/users/forms.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/users/management/commands/add_group.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/users/management/commands/add_group.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/users/management/commands/csu.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/users/management/commands/csu.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/users/management/commands/fill.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/users/management/commands/fill.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/users/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/users/views.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 3\n}</component>\n  <component name=\"ProjectId\" id=\"2Zx8dQuttDoIULaGeBDekxtjq6H\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"master\",\n    \"last_opened_file_path\": \"/home/akex/autosell\"\n  }\n}]]></component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"75eb1f1b-2d79-47cc-b108-1e23f18d545b\" name=\"Changes\" comment=\"\" />\n      <created>1703352459171</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1703352459171</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Курсовая 6\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1703352911525</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1703352911525</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Курсовая 6\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1703353144352</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1703353144352</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Курсовая 6\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1703353160619</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1703353160619</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Курсовая 6\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1703353236781</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1703353236781</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Курсовая 6\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Курсовая 6\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,17 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6 26.12">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/mailing/cron.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/cron.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/mailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/views.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/users/management/commands/add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/add_group.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/users/management/commands/csu.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/users/management/commands/fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/fill.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,6 +13,11 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -41,7 +37,7 @@
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "master",
++    "git-widget-placeholder": "develop",
+     "last_opened_file_path": "/home/akex/autosell"
+   }
+ }]]></component>
+@@ -93,11 +89,20 @@
+       <option name="project" value="LOCAL" />
+       <updated>1703353236781</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Курсовая 6 26.12">
++      <option name="closed" value="true" />
++      <created>1703608102704</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1703608102704</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Курсовая 6" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Курсовая 6" />
++    <MESSAGE value="Курсовая 6 26.12" />
++    <option name="LAST_COMMIT_MESSAGE" value="Курсовая 6 26.12" />
+   </component>
+ </project>
+\ No newline at end of file

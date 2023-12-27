@@ -1,0 +1,180 @@
+Index: mailing/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from datetime import datetime\n\nimport smtplib\nimport pytz\nfrom django.conf import settings\n\nfrom django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin\nfrom django.core.cache import cache\n\nfrom django.urls import reverse_lazy\nfrom django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView\nfrom django.core.mail import send_mail\n\nfrom client.models import Client\nfrom mailing.forms import MailingForms\nfrom mailing.models import Mailing, Log\n\n\nclass MailingListView(LoginRequiredMixin, ListView):\n    model = Mailing\n    template_name = 'mailing/mailing_list.html'\n\n    def get_queryset(self):\n        return super().get_queryset().filter(user=self.request.user)\n\n\nclass MailingDetailView(LoginRequiredMixin, DetailView):\n    model = Mailing\n    template_name = 'mailing/mailing_detail.html'\n\n    def get_context_data(self, **kwargs):\n        context_data = super().get_context_data(**kwargs)\n        if settings.CACHE_ENABLED:\n            key = f'log_list_{self.object.pk}'\n            log_list = cache.get(key)\n            if log_list is None:\n                log_list = self.object.log_set.all()\n                cache.set(key, log_list)\n        else:\n            log_list = self.object.log_set.all()\n        context_data['logs'] = log_list\n\n        return context_data\n\n\nclass MailingCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):\n    model = Mailing\n    form_class = MailingForms\n    permission_required = 'mailing.add_mailing'\n    success_url = reverse_lazy('mailing:list')\n\n    def form_valid(self, form):\n        tz = pytz.timezone('Europe/Moscow')\n        clients = [client.email for client in Client.objects.filter(user=self.request.user)]\n        new_mailing = form.save()\n\n        if new_mailing.mailing_time <= datetime.now(tz):\n            mail_subject = new_mailing.message.body if new_mailing.message is not None else 'Рассылка'\n            message = new_mailing.message.theme if new_mailing.message is not None else 'Вам назначена рассылка'\n            try:\n                send_mail(mail_subject, message, settings.EMAIL_HOST_USER, clients)\n                log = Log.objects.create(date_attempt=datetime.now(tz), status='Успешно', answer='200', mailing=new_mailing)\n                log.save()\n            except smtplib.SMTPDataError as err:\n                log = Log.objects.create(date_attempt=datetime.now(tz), status='Ошибка', answer=err, mailing=new_mailing)\n                log.save()\n\n            except smtplib.SMTPException as err:\n                log = Log.objects.create(date_attempt=datetime.now(tz), status='Ошибка', answer=err, mailing=new_mailing)\n                log.save()\n\n            except Exception as err:\n                log = Log.objects.create(date_attempt=datetime.now(tz), status='Ошибка', answer=err, mailing=new_mailing)\n                log.save()\n\n            new_mailing.status = 3\n            if new_mailing.user is None:\n                new_mailing.user = self.request.user\n            new_mailing.save()\n\n        return super().form_valid(form)\n\n\nclass MailingUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):\n    model = Mailing\n    form_class = MailingForms\n    permission_required = 'mailing.change_mailing'\n    success_url = reverse_lazy('mailing:list')\n\n\nclass MailingDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):\n    model = Mailing\n    permission_required = 'mailing.delete_mailing'\n    success_url = reverse_lazy('mailing:list')
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/mailing/views.py b/mailing/views.py
+--- a/mailing/views.py	(revision f89bacd12e0d2b50a5bb3cdf8c3032826b4db761)
++++ b/mailing/views.py	(date 1703612748610)
+@@ -46,7 +46,6 @@
+ class MailingCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+     model = Mailing
+     form_class = MailingForms
+-    permission_required = 'mailing.add_mailing'
+     success_url = reverse_lazy('mailing:list')
+ 
+     def form_valid(self, form):
+Index: mailing/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.conf import settings\nfrom django.conf.urls.static import static\nfrom django.urls import path\nfrom mailing.apps import MailingConfig\nfrom mailing.views import MailingListView, MailingDetailView, MailingCreateView, \\\n    MailingUpdateView, MailingDeleteView\n\n\napp_name = MailingConfig.name\n\nurlpatterns = [\n    path('list/', MailingListView.as_view(), name='list'),\n    path('view/<int:pk>', MailingDetailView.as_view(), name='view_mailing'),\n    path('create/', MailingCreateView.as_view(), name='create'),\n    path('edit/<int:pk>', MailingUpdateView.as_view(), name='edit'),\n    path('delete/<int:pk>', MailingDeleteView.as_view(), name='delete'),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/mailing/urls.py b/mailing/urls.py
+--- a/mailing/urls.py	(revision f89bacd12e0d2b50a5bb3cdf8c3032826b4db761)
++++ b/mailing/urls.py	(date 1703620841089)
+@@ -14,4 +14,4 @@
+     path('create/', MailingCreateView.as_view(), name='create'),
+     path('edit/<int:pk>', MailingUpdateView.as_view(), name='edit'),
+     path('delete/<int:pk>', MailingDeleteView.as_view(), name='delete'),
+-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+\ No newline at end of file
++] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+Index: blogs/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\nfrom django.urls import reverse_lazy\nfrom django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView\n\nfrom blogs.forms import BlogForm\nfrom blogs.models import Blog\nfrom client.models import Client\nfrom mailing.models import Mailing\n\n\nclass BlogCreateView(CreateView):\n    model = Blog\n    form_class = BlogForm\n    success_url = reverse_lazy('blogs:blogs')\n\n    def form_valid(self, form):\n        mailing = form.save()\n        mailing.user = self.request.user\n        mailing.save()\n        return super().form_valid(form)\n\n\nclass BlogListView(ListView):\n    model = Blog\n\n\nclass BlogDetailView(DetailView):\n    model = Blog\n\n    def get_object(self, queryset=None):\n        self.object = super().get_object(queryset)\n        self.object.count_views += 1\n        self.object.save()\n\n        return self.object\n\n\nclass BlogUpdateView(UpdateView):\n    model = Blog\n    fields = ('header', 'content', 'image',)\n    success_url = reverse_lazy('blogs:blogs')\n\n\nclass BlogDeleteView(DeleteView):\n    model = Blog\n    success_url = reverse_lazy('blogs:blogs')\n\n\ndef main(request):\n    client = len(Client.objects.all().distinct('email'))\n    blog = Blog.objects.filter(is_published=True).order_by('?')\n    mailing = len(Mailing.objects.all())\n    mailing_active = len(Mailing.objects.filter(status=2))\n    context = {\n        'blog': blog[:3],\n        'mailing': mailing,\n        'mailing_active': mailing_active,\n        'client': client\n    }\n    return render(request, 'blogs/main.html', context)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/blogs/views.py b/blogs/views.py
+--- a/blogs/views.py	(revision f89bacd12e0d2b50a5bb3cdf8c3032826b4db761)
++++ b/blogs/views.py	(date 1703620893947)
+@@ -1,60 +1,15 @@
+ from django.shortcuts import render
+-from django.urls import reverse_lazy
+-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
+-
+-from blogs.forms import BlogForm
+ from blogs.models import Blog
+-from client.models import Client
+ from mailing.models import Mailing
+ 
+ 
+-class BlogCreateView(CreateView):
+-    model = Blog
+-    form_class = BlogForm
+-    success_url = reverse_lazy('blogs:blogs')
+-
+-    def form_valid(self, form):
+-        mailing = form.save()
+-        mailing.user = self.request.user
+-        mailing.save()
+-        return super().form_valid(form)
+-
+-
+-class BlogListView(ListView):
+-    model = Blog
+-
+-
+-class BlogDetailView(DetailView):
+-    model = Blog
+-
+-    def get_object(self, queryset=None):
+-        self.object = super().get_object(queryset)
+-        self.object.count_views += 1
+-        self.object.save()
+-
+-        return self.object
+-
+-
+-class BlogUpdateView(UpdateView):
+-    model = Blog
+-    fields = ('header', 'content', 'image',)
+-    success_url = reverse_lazy('blogs:blogs')
+-
++def blog_list(request):
++    blogs = Blog.objects.filter(is_published=True).order_by('?')[:3]
++    count_mailing = Mailing.objects.count()
+ 
+-class BlogDeleteView(DeleteView):
+-    model = Blog
+-    success_url = reverse_lazy('blogs:blogs')
+-
+-
+-def main(request):
+-    client = len(Client.objects.all().distinct('email'))
+-    blog = Blog.objects.filter(is_published=True).order_by('?')
+-    mailing = len(Mailing.objects.all())
+-    mailing_active = len(Mailing.objects.filter(status=2))
+     context = {
+-        'blog': blog[:3],
+-        'mailing': mailing,
+-        'mailing_active': mailing_active,
+-        'client': client
++        'blogs': blogs,
++        'count_mailing': count_mailing,
++
+     }
+-    return render(request, 'blogs/main.html', context)
++    return render(request, 'blogs/blog_list.html', context)
+Index: users/management/commands/csu.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.core.management import BaseCommand\n\nfrom users.models import User\n\n\nclass Command(BaseCommand):\n\n    def handle(self, *args, **options):\n        user = User.objects.create(\n            email='admin@admin.ru',\n            is_active=True,\n            is_staff=True,\n            is_superuser=True\n        )\n\n        user.set_password('12345')\n        user.save()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/users/management/commands/csu.py b/users/management/commands/csu.py
+--- a/users/management/commands/csu.py	(revision f89bacd12e0d2b50a5bb3cdf8c3032826b4db761)
++++ b/users/management/commands/csu.py	(date 1703614445236)
+@@ -5,13 +5,15 @@
+ 
+ class Command(BaseCommand):
+ 
+-    def handle(self, *args, **options):
++    def handle(self, *args, **kwargs):
+         user = User.objects.create(
+-            email='admin@admin.ru',
+-            is_active=True,
++            email='admin@sky.pro',
++            first_name='admin',
++            last_name='SkyPro',
++
+             is_staff=True,
+             is_superuser=True
+         )
+ 
+-        user.set_password('12345')
+-        user.save()
+\ No newline at end of file
++        user.set_password('admin')
++        user.save()
+Index: blogs/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.conf import settings\nfrom django.conf.urls.static import static\nfrom django.urls import path\nfrom django.views.decorators.cache import cache_page\n\nfrom blogs.apps import BlogsConfig\nfrom blogs.views import BlogListView, BlogCreateView, BlogDetailView, BlogUpdateView, BlogDeleteView, main\n\napp_name = BlogsConfig.name\n\nurlpatterns = [\n    path('', main, name='main'),\n    path('blogs/', BlogListView.as_view(), name='blogs'),\n    path('create/', BlogCreateView.as_view(), name='create'),\n    path('view/<int:pk>/', cache_page(60)(BlogDetailView.as_view()), name='view'),\n    path('update/<int:pk>/', BlogUpdateView.as_view(), name='update'),\n    path('delete/<int:pk>/', BlogDeleteView.as_view(), name='delete'),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/blogs/urls.py b/blogs/urls.py
+--- a/blogs/urls.py	(revision f89bacd12e0d2b50a5bb3cdf8c3032826b4db761)
++++ b/blogs/urls.py	(date 1703619326673)
+@@ -4,15 +4,15 @@
+ from django.views.decorators.cache import cache_page
+ 
+ from blogs.apps import BlogsConfig
+-from blogs.views import BlogListView, BlogCreateView, BlogDetailView, BlogUpdateView, BlogDeleteView, main
++from blogs.views import blog_list
+ 
+ app_name = BlogsConfig.name
+ 
+ urlpatterns = [
+-    path('', main, name='main'),
+-    path('blogs/', BlogListView.as_view(), name='blogs'),
+-    path('create/', BlogCreateView.as_view(), name='create'),
+-    path('view/<int:pk>/', cache_page(60)(BlogDetailView.as_view()), name='view'),
+-    path('update/<int:pk>/', BlogUpdateView.as_view(), name='update'),
+-    path('delete/<int:pk>/', BlogDeleteView.as_view(), name='delete'),
+-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+\ No newline at end of file
++    #path('', main, name='main'),
++    path('', blog_list, name='blogs'),
++    #path('create/', BlogCreateView.as_view(), name='create'),
++    #path('view/<int:pk>/', cache_page(60)(BlogDetailView.as_view()), name='view'),
++    #path('update/<int:pk>/', BlogUpdateView.as_view(), name='update'),
++    #path('delete/<int:pk>/', BlogDeleteView.as_view(), name='delete'),
++] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

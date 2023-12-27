@@ -1,49 +1,23 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-
-from blogs.forms import BlogForm
 from blogs.models import Blog
 from client.models import Client
 from mailing.models import Mailing
 
 
-class BlogCreateView(CreateView):
-    model = Blog
-    form_class = BlogForm
-    success_url = reverse_lazy('blogs:blogs')
+#def blog_list(request):
+#    blogs = Blog.objects.filter(is_published=True).order_by('?')[:3]
+#    count_mailing = Mailing.objects.count()
+#    count_active_mailing = Mailing.objects.filter(status=2).count()
+#    unique_clients = Mailing.objects.values('user_id').distinct().count()
 
-    def form_valid(self, form):
-        mailing = form.save()
-        mailing.user = self.request.user
-        mailing.save()
-        return super().form_valid(form)
+#    context = {
+#        'blogs': blogs,
+#        'count_mailing': count_mailing,
+#        'count_active_mailing': count_active_mailing,
+#        'unique_clients': unique_clients,
 
-
-class BlogListView(ListView):
-    model = Blog
-
-
-class BlogDetailView(DetailView):
-    model = Blog
-
-    def get_object(self, queryset=None):
-        self.object = super().get_object(queryset)
-        self.object.count_views += 1
-        self.object.save()
-
-        return self.object
-
-
-class BlogUpdateView(UpdateView):
-    model = Blog
-    fields = ('header', 'content', 'image',)
-    success_url = reverse_lazy('blogs:blogs')
-
-
-class BlogDeleteView(DeleteView):
-    model = Blog
-    success_url = reverse_lazy('blogs:blogs')
+#    }
+#    return render(request, 'blogs/blog_list.html', context)
 
 
 def main(request):
@@ -57,4 +31,4 @@ def main(request):
         'mailing_active': mailing_active,
         'client': client
     }
-    return render(request, 'blogs/main.html', context)
+    return render(request, 'blogs/blog_list.html', context)

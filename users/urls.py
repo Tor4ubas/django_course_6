@@ -15,6 +15,7 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('profile/', ProfileView.as_view(), name='profile'),
     path('profile/genpassword/', generate_new_password, name='generate_new_password'),
+    #path('verifying/', VerifiedEmailView.as_view(), name='verifying'),
     path('verifying/', verify_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

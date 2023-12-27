@@ -45,7 +45,6 @@ class MailingDetailView(LoginRequiredMixin, DetailView):
 class MailingCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Mailing
     form_class = MailingForms
-    permission_required = 'mailing.add_mailing'
     success_url = reverse_lazy('mailing:list')
 
     def form_valid(self, form):

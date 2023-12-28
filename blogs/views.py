@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+
+from blogs.forms import BlogForm
 from blogs.models import Blog
 from client.models import Client
 from mailing.models import Mailing
 
 
-#def blog_list(request):
+# def blog_list(request):
 #    blogs = Blog.objects.filter(is_published=True).order_by('?')[:3]
 #    count_mailing = Mailing.objects.count()
 #    count_active_mailing = Mailing.objects.filter(status=2).count()
@@ -18,6 +21,51 @@ from mailing.models import Mailing
 
 #    }
 #    return render(request, 'blogs/blog_list.html', context)
+def create_blog_post(request):
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('blogs:blog_list')
+    else:
+        form = BlogForm()
+    return render(request, 'blogs/blog_form.html', {'form': form})
+
+
+def view_blog_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    #post.views += 1
+    post.save()
+    return render(request, 'blogs/blog_detail.html', {'post': post})
+
+
+def list_blog_posts(request):
+    posts = Blog.objects.filter(is_published=True)
+    #posts_without_slug = posts.filter(slug__isnull=True)
+    #posts_without_slug.delete()
+    return render(request, 'blogs/blog_list.html', {'posts': posts})
+
+
+def update_blog_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    if request.method == 'POST':
+        header = request.POST.get('header')
+        content = request.POST.get('content')
+        is_published = request.POST.get('is_published')
+        post.header = header
+        post.content = content
+        post.is_published = is_published
+        post.save()
+        return redirect(reverse('blogs:update_post', args=[pk]))
+    return render(request, 'blogs/blog_form.html', {'post': post})
+
+
+def delete_blog_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    if request.method == 'POST':
+        post.delete()
+        return redirect(reverse('blogs:blog_list'))
+    return render(request, 'blogs/blog_confirm_delete.html', {'post': post})
 
 
 def main(request):
@@ -31,4 +79,4 @@ def main(request):
         'mailing_active': mailing_active,
         'client': client
     }
-    return render(request, 'blogs/blog_list.html', context)
+    return render(request, 'blogs/main.html', context)

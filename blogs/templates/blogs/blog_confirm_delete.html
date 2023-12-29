@@ -1,20 +1,13 @@
 {% extends 'blogs/base.html' %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-12">
-            <div class="card-body">
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <p style="font-size: 25px">Вы действительно хотите удалить блог "{{object|title}}"?</p>
-                    <button type="submit" class="btn btn-danger">
-                        Подтвердить
-                    </button>
-                    <a href="{% url 'blogs:blogs' %}" class="btn btn-outline-primary">
-                        Отмена
-                    </a>
-                </form>
-            </div>
-        </div>
-    </div>
+
+<h1>Подтверждение удаления</h1>
+<p>Вы уверены, что хотите удалить блог "{{ post.header }}"?</p>
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+
+  <input type="submit" value="Удалить">
+</form>
 {% endblock %}

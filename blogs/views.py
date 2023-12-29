@@ -26,7 +26,7 @@ def create_blog_post(request):
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('blogs:blog_list')
+            return redirect('blogs:blog_list.html')
     else:
         form = BlogForm()
     return render(request, 'blogs/blog_form.html', {'form': form})
@@ -34,16 +34,20 @@ def create_blog_post(request):
 
 def view_blog_post(request, pk):
     post = get_object_or_404(Blog, pk=pk)
-    #post.views += 1
+    post.count_views += 1
     post.save()
-    return render(request, 'blogs/blog_detail.html', {'post': post})
+    return render(request, 'blogs/blog_detail.html', {'object': post})
 
 
 def list_blog_posts(request):
-    posts = Blog.objects.filter(is_published=True)
+    blog = Blog.objects.filter(is_published=True).order_by('?')
+    context = {
+        'blog': blog,
+
+    }
     #posts_without_slug = posts.filter(slug__isnull=True)
     #posts_without_slug.delete()
-    return render(request, 'blogs/blog_list.html', {'posts': posts})
+    return render(request, 'blogs/blog_list.html', context)
 
 
 def update_blog_post(request, pk):
@@ -64,7 +68,7 @@ def delete_blog_post(request, pk):
     post = get_object_or_404(Blog, pk=pk)
     if request.method == 'POST':
         post.delete()
-        return redirect(reverse('blogs:blog_list'))
+        return redirect(reverse('blogs:blogs'))
     return render(request, 'blogs/blog_confirm_delete.html', {'post': post})
 
 

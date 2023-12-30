@@ -13,8 +13,7 @@ from users.models import User
 
 @login_required
 def generate_new_password(request):
-
-    new_password = ''.join([str(random.randint(0,9)) for _ in range(12)])
+    new_password = ''.join([str(random.randint(0, 9)) for _ in range(12)])
     send_mail(
         subject='Вы сменили пароль',
         message=f'Ваш новый пароль: {new_password}',
@@ -40,4 +39,3 @@ def verify_view(request):
         user.verified = True
         user.save()
     return render(request, 'users/verifying.html')
-

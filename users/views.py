@@ -1,16 +1,11 @@
-from audioop import reverse
-from random import random
-import random
+from random import choices
 from django.conf import settings
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView as BaseLoginView
 from django.contrib.auth.views import LogoutView as BaseLogoutView
 from django.core.mail import send_mail
-from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy
-from django.utils.crypto import get_random_string
-from django.views import View
 from django.views.generic import CreateView, UpdateView
 
 from users.forms import UserForm, UserRegisterForm
@@ -19,6 +14,18 @@ from users.models import User
 
 class LoginView(BaseLoginView):
     template_name = 'users/login.html'
+
+    def form_valid(self, form):
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+
+        if user.verified:  # проверяем, подтвержден ли пользователь
+            login(self.request, user)
+            return super().form_valid(form)
+        else:
+            form.add_error(None, "Your account is not verified.")
+            return self.form_invalid(form)
 
 
 class LogoutView(BaseLogoutView):
@@ -32,23 +39,19 @@ class RegisterView(CreateView):
     template_name = 'users/register.html'
 
     def form_valid(self, form):
-        kod = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        if form.is_valid():
-            verified_password = ''
-            for i in range(8):
-                rand_idx = random.randint(0, len(kod)-1)
-                verified_password += str(rand_idx)
-
-            form.verified_password = verified_password
-            user = form.save()
-            user.verified_password = verified_password
-            send_mail(
-                subject='Поздравляем с регистрацией!',
-                message=f'Подтвердите вашу регистрацию, нажмите на ссылку: http://127.0.0.1:8000/users/verifying?code={user.verified_password}\n ',
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=[user.email]
-            )
-            return super().form_valid(form)
+        digits = [str(i) for i in range(10)]
+        verified_password = ''.join(choices(digits, k=8))
+        user = form.save()
+        user.verified = False
+        user.verified_password = verified_password
+        user.save()
+        send_mail(
+            subject='Поздравляем с регистрацией!',
+            message=f'Подтвердите вашу регистрацию, нажмите на ссылку: http://127.0.0.1:8000/users/verifying?code={user.verified_password}\n ',
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[user.email]
+        )
+        return super().form_valid(form)
 
 
 class ProfileView(LoginRequiredMixin, UpdateView):
@@ -60,7 +63,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         return self.request.user
 
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserForm
     success_url = reverse_lazy('users:profile')

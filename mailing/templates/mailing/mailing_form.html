@@ -1,32 +1,23 @@
-{% extends 'blogs/base.html'%}
+{% extends 'mailing/base.html' %}
+
 {% block content %}
-<div class="col-12 mb-5">
-<a class="btn btn-outline-primary" href="{% url 'blogs:main' %}">Назад</a>
-</div>
-<div class="col-12">
     <form method="post" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            Добавление рассылки
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-success">
-                            {% if object %}
-                                Сохранить
-                            {% else %}
-                                Создать
-                            {% endif %}
-                        </button>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Создание рассылки</h2>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button type="submit" class="w-100 btn btn-sm btn-outline-success">Сохранить</button>
+                                        <a href="{% url 'mailing:mailing_list' %}" class="w-100 btn btn-sm btn-outline-danger">Назад</a>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
     </form>
-</div>
 {% endblock %}

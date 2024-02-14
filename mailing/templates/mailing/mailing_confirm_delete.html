@@ -1,16 +1,20 @@
-{% extends 'blogs/base.html'%}
+{% extends 'mailing/base.html' %}
+
 {% block content %}
-<div class="col-12">
-    <div class="row">
-        <div class="col-6">
-            <div class="card">
-                <div class="card-body">
-                    <form method="post">
-                        {% csrf_token %}
-                        <p>Хотите удалить рассылку?</p>
-                        <button type="submit" class="btn btn-danger">Удалить</button>
-                        <a href="{% url 'mailing:list'%}" class="btn btn-warning">Отмена</a>
-                    </form>
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <p>Удалить рассылку?</p>
+                            <button type="submit" class="w-100 btn btn-sm btn-outline-danger">Подтвердить</button>
+                            <a href="{% url 'mailing:mailing_list' %}" class="w-100 btn btn-sm btn-outline-success">Назад</a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

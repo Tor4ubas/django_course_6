@@ -5,21 +5,159 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blogs/blog_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blogs/blog_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blogs/blog_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blogs/blog_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/management/commands/csu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/client_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/client_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/client_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/client_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/contacts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/includes/inc_mailing_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/management/commands/create_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/management/commands/create_super_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/profile_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/verify_email_error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/django_course_6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/django_course_6.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/blog_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/blog_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/blog_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/blog_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/includes/inc_main_menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templates/blogs/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/templatetags/my_tags.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/0002_client_delete_clients.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/templates/client/client_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/templates/client/client_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/templates/client/client_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/templates/client/client_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailing/cron.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/cron.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/cron.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/migrations/0002_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/migrations/0003_rename_massage_mailing_message_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/templates/mailing/mailing_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/templates/mailing/mailing_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/templates/mailing/mailing_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/templates/mailing/mailing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/templates/mailing/mailing_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailing/utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mailing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mailing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/album.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-utilities.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.esm.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.esm.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/holder.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/commands/add_group.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/add_group.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/commands/csu.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/commands/fill.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/fill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/cron.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/csu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/management/commands/fill.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0002_user_avatar_user_verified_user_verified_password.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/services.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/user_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/verifying.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/verify_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,18 +175,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/akex/autosell"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.runapscheduler.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/akex/PycharmProjects/django_course_6/mailing/management&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mailing/management" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app_send_mail/templates/app_send_mail" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/static/css/static/css" />
+      <recent name="$PROJECT_DIR$/users/templates/users" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="runapscheduler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="django_course_6" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app_send_mail" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app_send_mail/runapscheduler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.runapscheduler" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
       </set>
     </attachedChunks>
   </component>
@@ -99,5 +281,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Курсовая 6" />
     <option name="LAST_COMMIT_MESSAGE" value="Курсовая 6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

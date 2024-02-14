@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'blogs',
-    'client',
+    'blog',
     'mailing',
     'users',
-    'config',
+
+
 ]
 
 MIDDLEWARE = [
@@ -159,19 +159,20 @@ EMAIL_USE_TLS = False
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+# cron вызывающая задачу time_task
+CRONJOBS = [
+    ('* * * * *', 'mailing.services.time_task'),  # Ежеминутная рассылка
+    ('0 10 * * *', 'mailing.services.time_task', ['daily']),  # Ежедневная рассылка
+    ('0 10 * * 1', 'mailing.services.time_task', ['weekly']),  # Еженедельная рассылка
+    ('0 10 1 * *', 'mailing.services.time_task', ['monthly']),  # Ежемесячная рассылка
+]
+
 CACHE_ENABLED = os.getenv('CACHE_ENABLED') == 'True'
 
 if CACHE_ENABLED:
     CACHES = {
         "default": {
             "BACKEND": "django.core.cache.backends.redis.RedisCache",
-            "LOCATION": os.getenv('CACHE_LOCATION'),
-            # "LOCATION": "redis://127.0.0.1:6379",
-            # "LOCATION": "redis://username:password @ 127.0.0.1:6379",
-            "TIMEOUT": 60,
+            "LOCATION": os.getenv('CACHES_LOCATION'),
         }
     }
-
-CRONJOBS = [
-    ('*/5 * * * *', 'mailing.cron.my_scheduled_job')
-]

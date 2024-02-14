@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6">
+    <list default="true" id="75eb1f1b-2d79-47cc-b108-1e23f18d545b" name="Changes" comment="Курсовая 6 14/02/2024">
       <change afterPath="$PROJECT_DIR$/blog/forms.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/blog/templates/blogs/blog_confirm_delete.html" afterDir="false" />
@@ -280,7 +280,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Курсовая 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Курсовая 6" />
+    <MESSAGE value="Курсовая 6 14/02/2024" />
+    <option name="LAST_COMMIT_MESSAGE" value="Курсовая 6 14/02/2024" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
